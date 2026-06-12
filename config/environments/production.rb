@@ -53,6 +53,8 @@ Rails.application.configure do
   config.active_job.queue_adapter = :solid_queue
   config.solid_queue.connects_to = { database: { writing: :queue } }
 
+  config.action_cable.adapter = :async
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
@@ -69,7 +71,7 @@ Rails.application.configure do
   #   authentication: :plain
   # }
 
-  # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
+  # Enable locale fallbacks for I18n (makes lookups for any locale fall back tof
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
