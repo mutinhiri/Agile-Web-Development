@@ -22,8 +22,24 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="min-h-screen bg-stone-50 text-zinc-950 antialiased">
+    <header class="sticky top-0 z-40 border-b border-zinc-200/80 bg-stone-50/90 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <%= link_to root_path, class: "flex items-center gap-3 font-semibold tracking-tight text-zinc-950" do %>
+          <span class="grid h-9 w-9 place-items-center rounded-lg bg-emerald-700 text-sm font-black text-white">SE</span>
+          <span><%= t("brand", default: "ShopEase") %></span>
+        <% end %>
+
+        <div class="flex items-center gap-2">
+          <%= link_to "Catalog", products_path, class: "rounded-md px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-white hover:text-zinc-950" %>
+          <%= link_to cart_path, class: "inline-flex items-center gap-2 rounded-md bg-zinc-950 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-800" do %>
+            <span>Bag</span>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+
+    <main class="mx-auto min-h-[calc(100vh-74px)] max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <%= yield %>
     </main>
   </body>

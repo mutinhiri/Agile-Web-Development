@@ -1,0 +1,28 @@
+ARG RUBY_VERSION=3.3.9
+FROM ruby:$RUBY_VERSION-slim
+
+# Install dependencies
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+    build-essential \
+    git \
+    libpq-dev \
+    libvips \
+    libyaml-dev \
+    pkg-config \
+    curl \
+    postgresql-client
+
+WORKDIR /rails
+
+# Install gems
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+
+COPY . .
+
+# Convert Windows line endings to Linux and make binaries executable
+RUN chmod +x bin/* && sed -i 's/\r$//' bin/*
+
+EXPOSE 3000
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
