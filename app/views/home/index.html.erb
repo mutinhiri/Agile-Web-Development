@@ -1,1 +1,221 @@
-<div class="bg-red-900">hello</div>
+<!-- ============ HEADER ============ -->
+<header class="bg-white border-b border-gray-100">
+  <div class="bg-emerald-800 text-white">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3 text-sm">
+      <button class="flex items-center gap-2 bg-yellow-400 text-emerald-900 font-semibold px-4 py-2 rounded-md text-xs">
+        <span>☰</span> Browse All Categories
+      </button>
+      <div class="hidden md:flex items-center gap-6 font-medium">
+        <%= link_to "Home", "#", class: "hover:text-yellow-300" %>
+        <%= link_to "Shop", "#", class: "hover:text-yellow-300" %>
+        <%= link_to "Fruits", "#", class: "hover:text-yellow-300" %>
+        <%= link_to "Vegetable", "#", class: "hover:text-yellow-300" %>
+        <%= link_to "Beverages", "#", class: "hover:text-yellow-300" %>
+        <%= link_to "About Us", "#", class: "hover:text-yellow-300" %>
+        <%= link_to "Blogs", "#", class: "hover:text-yellow-300" %>
+      </div>
+      <div class="flex items-center gap-1 text-yellow-300 font-medium text-xs cursor-pointer">
+        Recently Viewed <span>▾</span>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="bg-gray-50 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 bg-white shadow-sm rounded-full px-4 py-2 text-sm font-medium text-gray-700">
+          🛒 The Best Online Grocery Store
+        </span>
+        <h1 class="mt-6 text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          Your One-Stop Shop for <span class="text-emerald-700">Quality Groceries</span>
+        </h1>
+        <p class="mt-4 text-gray-500 max-w-md">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+        </p>
+        <div class="mt-8 flex items-center gap-6">
+          <%= link_to "#", class: "bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2" do %>
+            Shop Now <span>→</span>
+          <% end %>
+          <%= link_to "View All Products", "#", class: "font-semibold text-gray-800 underline" %>
+        </div>
+        <div class="mt-10 flex items-center gap-3">
+          <div class="flex -space-x-3">
+            <% 3.times do |i| %>
+              <div class="w-9 h-9 rounded-full border-2 border-white bg-gray-300 overflow-hidden">
+                <img src="https://i.pravatar.cc/40?img=<%= i + 10 %>" class="w-full h-full object-cover" alt="customer">
+              </div>
+            <% end %>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-yellow-400 flex items-center justify-center text-xs font-bold text-emerald-900">+</div>
+          </div>
+          <div>
+            <p class="font-bold text-gray-900 leading-none">4.8 Ratings+</p>
+            <p class="text-xs text-gray-400">Trusted by 75k+ Customers</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative flex justify-center md:justify-end">
+        <img src="https://images.unsplash.com/photo-1607290092313-c8c1e15a4d8a?w=600&q=80"
+             alt="Woman holding fresh vegetables"
+             class="w-full max-w-md rounded-3xl object-cover">
+
+        <div class="absolute top-10 right-0 md:right-6 bg-white rounded-xl shadow-lg px-4 py-2 flex items-center gap-2 text-sm font-medium">
+          <span class="w-7 h-7 bg-emerald-700 rounded-full flex items-center justify-center text-white text-xs">💳</span>
+          Secure Payment
+        </div>
+
+        <div class="absolute bottom-16 left-0 md:left-6 bg-white rounded-xl shadow-lg px-4 py-2 flex items-center gap-2 text-sm font-medium">
+          <span class="w-7 h-7 bg-emerald-700 rounded-full flex items-center justify-center text-white text-xs">🚚</span>
+          Fast Delivery
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+
+<!-- ============ FEATURED CATEGORIES ============ -->
+<section class="bg-white py-16">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <p class="text-sm font-medium text-gray-400">Categories</p>
+    <h2 class="text-3xl font-bold text-gray-900 mt-1">
+      Featured <span class="text-emerald-700">Categories</span>
+    </h2>
+
+    <div class="mt-10 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-6">
+      <% [
+        ["Vegetables", "52 Products", "🥬"],
+        ["Fresh Fruits", "48 Products", "🍎"],
+        ["Milk & Eggs", "12 Products", "🥛"],
+        ["Bakery", "62 Products", "🥖"],
+        ["House Hold", "25 Products", "🧴"],
+        ["Dry Fruits", "8 Products", "🌰"],
+        ["Drinks", "20 Products", "🧃"]
+      ].each do |(name, count, emoji)| %>
+        <div class="flex flex-col items-center gap-3 cursor-pointer group">
+          <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center text-3xl group-hover:bg-emerald-50 transition">
+            <%= emoji %>
+          </div>
+          <div class="text-center">
+            <p class="font-semibold text-gray-800 text-sm"><%= name %></p>
+            <p class="text-xs text-gray-400"><%= count %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMO BANNERS ============ -->
+<section class="bg-white pb-16">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-6">
+    <!-- Vegetables Promo -->
+    <div class="relative bg-gray-100 rounded-2xl overflow-hidden flex items-center min-h-[260px] p-8">
+      <div class="relative z-10 max-w-[55%]">
+        <span class="inline-block bg-yellow-400 text-emerald-900 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+          Flat 20% Discount
+        </span>
+        <h3 class="text-2xl font-bold text-gray-900 leading-snug">Purely Fresh Vegetables</h3>
+        <p class="text-sm text-gray-500 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <%= link_to "#", class: "mt-6 inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-5 py-2.5 rounded-full text-sm" do %>
+          Shop Now <span>→</span>
+        <% end %>
+      </div>
+      <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&q=80"
+           alt="Fresh vegetables basket"
+           class="absolute right-0 bottom-0 h-full w-1/2 object-cover object-left">
+    </div>
+
+    <!-- Fruits Promo -->
+    <div class="relative bg-yellow-400 rounded-2xl overflow-hidden flex items-center min-h-[260px] p-8">
+      <div class="relative z-10 max-w-[55%]">
+        <span class="inline-block bg-white text-gray-900 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+          Flat 25% Discount
+        </span>
+        <h3 class="text-2xl font-bold text-gray-900 leading-snug">Fresh Fruits, Pure Quality</h3>
+        <p class="text-sm text-gray-700 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <%= link_to "#", class: "mt-6 inline-flex items-center gap-2 bg-emerald-800 hover:bg-emerald-900 text-white font-semibold px-5 py-2.5 rounded-full text-sm" do %>
+          Shop Now <span>→</span>
+        <% end %>
+      </div>
+      <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=500&q=80"
+           alt="Assorted fresh fruits"
+           class="absolute right-0 bottom-0 h-full w-1/2 object-cover object-left">
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section class="bg-gray-50 py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <p class="text-sm font-medium text-gray-400">Products</p>
+        <h2 class="text-3xl font-bold text-gray-900 mt-1">
+          Featured <span class="text-emerald-700">Products</span>
+        </h2>
+      </div>
+      <%= link_to "#", class: "hidden sm:inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-5 py-2.5 rounded-full text-sm" do %>
+        View All Products <span>→</span>
+      <% end %>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+      <%# Replace this loop with @products.each do |product| once data is wired up %>
+      <% [
+        { name: "Fresh Strawberry", category: "Fruits", rating: "4.8", weight: "500 g", price: 8, old_price: 10, img: "https://images.unsplash.com/photo-1518635017498-87f514b751ba?w=400&q=80" },
+        { name: "Fresh Cauliflower", category: "Vegetables", rating: "4.9", weight: "250 g", price: 12, old_price: 15, img: "https://images.unsplash.com/photo-1568584711271-6c929fb49b0a?w=400&q=80" },
+        { name: "Fresh Yellow Lemon", category: "Fruits", rating: "4.8", weight: "1 Kg", price: 8, old_price: 10, img: "https://images.unsplash.com/photo-1590502593747-42a996133562?w=400&q=80" },
+        { name: "Fresh Orange", category: "Fruits", rating: "4.7", weight: "500 g", price: 12, old_price: 16, img: "https://images.unsplash.com/photo-1547514701-42782101795e?w=400&q=80" }
+      ].each do |product| %>
+        <div class="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition relative">
+          <span class="absolute top-4 left-4 bg-emerald-700 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
+            20% off
+          </span>
+          <button class="absolute top-4 right-4 w-8 h-8 bg-white rounded-full shadow flex items-center justify-center z-10">
+            ♡
+          </button>
+
+          <div class="bg-gray-50 rounded-xl h-32 flex items-center justify-center overflow-hidden mb-4">
+            <img src="<%= product[:img] %>" alt="<%= product[:name] %>" class="w-full h-full object-cover">
+          </div>
+
+          <div class="flex items-center justify-between text-xs mb-1">
+            <span class="text-emerald-600 font-medium"><%= product[:category] %></span>
+            <span class="flex items-center gap-1 text-gray-700 font-medium">⭐ <%= product[:rating] %></span>
+          </div>
+
+          <h3 class="font-semibold text-gray-900 text-sm mb-1"><%= product[:name] %></h3>
+          <p class="text-xs text-gray-400 mb-3"><%= product[:weight] %></p>
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-baseline gap-2">
+              <span class="font-bold text-gray-900">$<%= product[:price] %>.00</span>
+              <span class="text-xs text-gray-400 line-through">$<%= product[:old_price] %>.00</span>
+            </div>
+            <button class="flex items-center gap-1 bg-emerald-50 text-emerald-700 font-semibold text-xs px-3 py-1.5 rounded-full">
+              🛒 Add
+            </button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUMMER DISCOUNT BANNER ============ -->
+<section class="bg-white py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="relative rounded-2xl overflow-hidden grid md:grid-cols-3 min-h-[220px]">
+      <img src="https://images.unsplash.com/photo-1573246123716-6b1782bfc499?w=400&q=80"
+           alt="Fresh produce" class="hidden md:block w-full h-full object-cover">
+      <div class="bg-rose-50 flex items-center justify-center p-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center">
+          Summer <span class="text-emerald-700">Discount</span>
+        </h2>
+      </div>
+      <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&q=80"
+           alt="Fresh groceries" class="hidden md:block w-full h-full object-cover">
+    </div>
+  </div>
+</section>
