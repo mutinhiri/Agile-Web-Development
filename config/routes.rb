@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  # Buyer Flow: Catalog -> Cart -> Checkout -> Receipt
-  root "products#index"
-  
+  # get "home/index"
   resources :products
   resource  :cart,     only: [:show, :create, :destroy]
   resources :line_items, only: [:create, :update, :destroy]
@@ -15,5 +13,6 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :show, :update] # Shipping queue & Mark as shipped
   end
 
-  get "up" => "rails/health#show", as: :rails_health_check
+  # Defines the root path route ("/")
+  root "home#index"
 end
