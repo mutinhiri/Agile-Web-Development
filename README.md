@@ -1,5 +1,5 @@
-# 🚂 Agile Web Development
-### A public, commit-by-commit journey through Rails 8 built in the open, for everyone.
+# 🛒 ShopEase
+### A Modern Rails 8 Journey: Honest Planning & Agile Execution
 
 > *"Every piece of knowledge in a system should be expressed in one place."*
 > — The DRY Principle, Rails Doctrine
@@ -7,12 +7,21 @@
 ---
 
 ## What This Is
+ShopEase is a demonstration of **Honest Planning**. Instead of over-specifying complex systems like Payments and Shipping before we understand the domain, we build the core flows first.
 
-This repository is a living codebase that follows **Agile Web Development Principles** from the very first line of code to a fully deployed, production-quality application.
+### The Two Flows
+1. **The Buyer Flow:**
+   `Catalog` → `Add to Cart` → `Checkout` → `Receipt`
 
-Every concept maps to a commit. Every commit message explains the **why**, not just the what.
+2. **The Seller Flow:**
+   `Login` → `Product Management` → `Shipping Queue` → `Ship Order`
 
-This isn't just an application walkthrough — it's a demonstration that Rails remains one of the most thoughtful, developer-friendly, and architecturally sound frameworks ever built.
+### Honest Planning
+We deliberately leave certain areas vague:
+- **Payments:** Defined as "fairly vague" until we choose a provider.
+- **Shipping:** A placeholder implementation that "won't survive long," allowing us to ship value now and refactor later.
+
+*"Overspecify it up front, and we're likely to get it wrong."*
 
 ---
 

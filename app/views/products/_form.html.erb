@@ -1,9 +1,9 @@
-<%= form_with(model: product, class: "contents") do |form| %>
+<%= form_with(model: product, class: "space-y-6") do |form| %>
   <% if product.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <div id="error_explanation" class="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+      <h2 class="font-bold"><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul class="list-disc ml-6">
+      <ul class="mt-2 list-disc pl-5">
         <% product.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": product.errors[:title].none?, "border-red-400 focus:outline-red-600": product.errors[:title].any?}] %>
+  <div>
+    <%= form.label :title, class: "mb-2 block text-sm font-bold text-zinc-800" %>
+    <%= form.text_field :title, class: ["block w-full rounded-md border px-3 py-2.5 shadow-sm focus:outline-none focus:ring-2", {"border-zinc-300 focus:border-emerald-700 focus:ring-emerald-700/20": product.errors[:title].none?, "border-red-400 focus:border-red-600 focus:ring-red-600/20": product.errors[:title].any?}] %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.textarea :description, rows: 10, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": product.errors[:description].none?, "border-red-400 focus:outline-red-600": product.errors[:description].any?}] %>
+  <div>
+    <%= form.label :description, class: "mb-2 block text-sm font-bold text-zinc-800" %>
+    <%= form.textarea :description, rows: 8, class: ["block w-full rounded-md border px-3 py-2.5 shadow-sm focus:outline-none focus:ring-2", {"border-zinc-300 focus:border-emerald-700 focus:ring-emerald-700/20": product.errors[:description].none?, "border-red-400 focus:border-red-600 focus:ring-red-600/20": product.errors[:description].any?}] %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :image %>
-    <%= form.file_field :image, accept: "image/*", class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": product.errors[:image].none?, "border-red-400 focus:outline-red-600": product.errors[:image].any?}] %>
+  <div>
+    <%= form.label :image, class: "mb-2 block text-sm font-bold text-zinc-800" %>
+    <%= form.file_field :image, accept: "image/*", class: ["block w-full rounded-md border px-3 py-2.5 text-sm shadow-sm file:mr-4 file:rounded-md file:border-0 file:bg-zinc-950 file:px-4 file:py-2 file:text-sm file:font-bold file:text-white hover:file:bg-zinc-800 focus:outline-none focus:ring-2", {"border-zinc-300 focus:border-emerald-700 focus:ring-emerald-700/20": product.errors[:image].none?, "border-red-400 focus:border-red-600 focus:ring-red-600/20": product.errors[:image].any?}] %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :price %>
-    <%= form.text_field :price, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": product.errors[:price].none?, "border-red-400 focus:outline-red-600": product.errors[:price].any?}] %>
+  <div>
+    <%= form.label :price, class: "mb-2 block text-sm font-bold text-zinc-800" %>
+    <%= form.text_field :price, class: ["block w-full rounded-md border px-3 py-2.5 shadow-sm focus:outline-none focus:ring-2", {"border-zinc-300 focus:border-emerald-700 focus:ring-emerald-700/20": product.errors[:price].none?, "border-red-400 focus:border-red-600 focus:ring-red-600/20": product.errors[:price].any?}] %>
   </div>
 
-  <div class="inline">
-    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  <div>
+    <%= form.submit class: "w-full cursor-pointer rounded-md bg-emerald-700 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-800 sm:w-auto" %>
   </div>
 <% end %>

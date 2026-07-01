@@ -1,10 +1,17 @@
 <% content_for :title, "Editing product" %>
 
-<div class="md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Editing product</h1>
+<div class="mx-auto max-w-3xl">
+  <div class="mb-8">
+    <p class="text-sm font-bold uppercase tracking-[0.18em] text-emerald-700">Inventory</p>
+    <h1 class="mt-2 text-4xl font-black tracking-tight text-zinc-950">Editing product</h1>
+  </div>
 
-  <%= render "form", product: @product %>
+  <div class="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+    <%= render "form", product: @product %>
+  </div>
 
-  <%= link_to "Show this product", @product, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-  <%= link_to "Back to products", products_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <%= link_to "Show this product", @product, class: "rounded-md bg-white px-3 py-2 text-sm font-semibold text-zinc-700 shadow-sm ring-1 ring-zinc-200 hover:text-zinc-950" %>
+    <%= link_to "Back", products_path, class: "rounded-md px-3 py-2 text-sm font-semibold text-zinc-600 hover:bg-white hover:text-zinc-950" %>
+  </div>
 </div>
