@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "store/index"
   # get "home/index"
   resources :products
   resource  :cart,     only: [:show, :create, :destroy]
