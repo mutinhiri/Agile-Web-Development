@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "store/index"
+  # get "store/index"
   # get "home/index"
   resources :products
   resource  :cart,     only: [:show, :create, :destroy]
@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   end
 
   # Defines the root path route ("/")
-  root "home#index"
+  root "store#index", as: "store_index"
 end
