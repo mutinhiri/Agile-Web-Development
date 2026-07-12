@@ -1,4 +1,6 @@
 <% content_for :title, "Products" %>
+<%= turbo_stream_from "products" %>
+<%= turbo_refreshes_with method: :morph, scroll: :preserve %>
 
 <div class="space-y-10">
   <section class="overflow-hidden rounded-lg bg-zinc-950 text-white shadow-sm">

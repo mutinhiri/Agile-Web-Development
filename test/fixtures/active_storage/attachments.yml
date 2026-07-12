@@ -1,0 +1,14 @@
+one:
+  name: image
+  record: one (Product)
+  blob: blob_one
+
+two:
+  name: image
+  record: two (Product)
+  blob: blob_two
+
+fruitveg:
+  name: image
+  record: fruitveg (Product)
+  blob: blob_fruitveg

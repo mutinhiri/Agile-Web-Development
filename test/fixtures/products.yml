@@ -9,3 +9,8 @@ two:
   title: MyString
   description: MyText
   price: 9.99
+
+fruitveg:
+  title: Baobab
+  description: good baobab fruits
+  price: 3

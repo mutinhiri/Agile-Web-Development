@@ -1,0 +1,3 @@
+blob_one: <%= ActiveStorage::FixtureSet.blob filename: 'mango.jpg' %>
+blob_two: <%= ActiveStorage::FixtureSet.blob filename: 'mango.jpg' %>
+blob_fruitveg: <%= ActiveStorage::FixtureSet.blob filename: 'mango.jpg' %>
