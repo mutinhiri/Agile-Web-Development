@@ -26,7 +26,11 @@
 
   <body>
     <header>
-      <%= image_tag %>
+      <%= image_tag  "logo.png" alt: "Shopease" %>
+      <h1> <%= @page_title  %> </h1>
+      <section>
+        
+      </section>
     </header>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
